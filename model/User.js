@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
 
      username: {
@@ -38,5 +39,11 @@ const UserSchema = new mongoose.Schema({
      isAdmin: {
           type: Boolean,
           default: false
-     }
-})
+     },
+
+},
+     { timestamps: true },
+
+)
+
+module.exports = mongoose.model('User', UserSchema)
