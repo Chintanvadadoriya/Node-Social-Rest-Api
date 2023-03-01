@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "bd31b38a-ed0d-4aaa-b957-d6bb095aff90",
+		"name": "Social-Midia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19430747"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"amish\",\r\n    \"email\":\"amish@gmail.com\",\r\n    \"password\":123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"nayan@gmail.com\",\r\n    \"password\":123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fcd8a7f85e49b81b4e7677\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/63fcd8a7f85e49b81b4e7677",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"63fcd8a7f85e49b81b4e7677"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fd7014cdee246ec08a4946\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/63fd7014cdee246ec08a4946",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"63fd7014cdee246ec08a4946"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Userlist_single",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/users/63fcd8a7f85e49b81b4e7677",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"users",
+						"63fcd8a7f85e49b81b4e7677"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "follow",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fe2c22a99bc409d15ea5dd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/users/63fe2c44a99bc409d15ea5df/follow",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"users",
+						"63fe2c44a99bc409d15ea5df",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unfollow",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fe2c22a99bc409d15ea5dd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/users/63fe2c44a99bc409d15ea5df/unfollow",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"users",
+						"63fe2c44a99bc409d15ea5df",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fe2c44a99bc409d15ea5df\",\r\n    \"desc\":\"second post by Amish\",\r\n    \"image\":\"image.png\",\r\n    \"likes\":[1,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/post",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fe2c44a99bc409d15ea5df\",\r\n    \"desc\":\"second post update  by Amish\",\r\n    \"image\":\"image.png\",\r\n    \"likes\":[1,2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/post/63febad794b0653aa6bff279",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"post",
+						"63febad794b0653aa6bff279"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fe2c44a99bc409d15ea5df\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/post/63febad794b0653aa6bff279",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"post",
+						"63febad794b0653aa6bff279"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like/Dislike post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"63fe2c44a99bc409d15ea5df\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/post/63febb3c94b0653aa6bff27b/like",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"post",
+						"63febb3c94b0653aa6bff27b",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Timeline",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
