@@ -19,7 +19,7 @@ router.put('/:id', async (req, res) => {
           }
           try{
                const user =await User.findByIdAndUpdate(req.params.id,{$set:req.body})
-               res.status(200).json({msg:'Account has been updated'}) 
+               res.status(200).json({msg:'Account has been updated',user:user}) 
 
           }catch(err){
              console.log('user update Exeption :>> ',err)
@@ -50,7 +50,7 @@ router.delete('/:id', async (req, res) => {
      }
 })
 
-// get user
+// get user with id
 
 router.get('/:id',async(req,res)=>{
      try{
@@ -58,7 +58,19 @@ router.get('/:id',async(req,res)=>{
         const {password,updatedAt,...other}=user._doc
         res.status(200).json(other)
      }catch(err){
-         console.log('Get user Exeption :>> ',err)
+         console.log('Get user Exeption id:>> ',err)
+         res.status(500).json(err)
+     }
+})
+
+// get user with Username
+
+router.get('/username/:username',async(req,res)=>{
+     try{
+        const user =await User.find({username:req.params.username})
+        res.status(200).json(user)
+     }catch(err){
+         console.log('Get user Exeption username :>> ',err)
          res.status(500).json(err)
      }
 })
