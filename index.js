@@ -7,6 +7,10 @@ const morgan = require('morgan')
 const userRoute = require('./routes/users')
 const userAuth = require('./routes/auth')
 const postRoute =require('./routes/post')
+const conversationRoute =require('./routes/conversation')
+const messageRoute =require('./routes/message')
+
+
 const multer =require('multer')
 const path =require('path')
 
@@ -59,6 +63,8 @@ app.use(morgan('common'))
 app.use('/api/users', userRoute)
 app.use('/api/auth', userAuth)
 app.use('/api/post',postRoute)
+app.use('/api/conversation',conversationRoute)
+app.use('/api/message',messageRoute)
 
 
 app.listen(5000)    
