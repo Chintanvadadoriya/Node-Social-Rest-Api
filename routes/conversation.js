@@ -32,4 +32,20 @@ router.get('/:userId',async(req,res)=>{
           res.status(500).json(err)
      }
 })
+
+//get conv  include two userId 
+
+
+router.get('/find/:firstUserId/:secondUserId',async(req,res)=>{
+     try{
+          const conv =await Conversation.findOne({members:{ $all : [req.params.firstUserId,req.params.secondUserId]}}
+          )
+          res.status(200).json(conv)
+          
+     }catch(err){
+          console.log('convocation get two UserId :>> ', err)
+          res.status(500).json(err)
+
+     }
+})
 module.exports=router;
