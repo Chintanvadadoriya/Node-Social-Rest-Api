@@ -9,6 +9,8 @@ const userAuth = require('./routes/auth')
 const postRoute =require('./routes/post')
 const conversationRoute =require('./routes/conversation')
 const messageRoute =require('./routes/message')
+var cors = require('cors')
+
 
 
 const multer =require('multer')
@@ -61,7 +63,7 @@ app.use(express.json())
 app.use(helmet())
 app.use(morgan('common'))
 app.use('/api/users', userRoute)
-app.use('/api/auth', userAuth)
+app.use(cors('/api/auth', userAuth))
 app.use('/api/post',postRoute)
 app.use('/api/conversation',conversationRoute)
 app.use('/api/message',messageRoute)
