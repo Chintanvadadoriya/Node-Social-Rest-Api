@@ -58,7 +58,7 @@ app.post('/api/upload',upload.single('file'),(req,res)=>{
 })
 
 const corsOptions ={
-     origin:'http://localhost:3000', 
+     origin:'https://mundiyaravni.netlify.app/', 
      credentials:true,            //access-control-allow-credentials:true
      optionSuccessStatus:200
  }
