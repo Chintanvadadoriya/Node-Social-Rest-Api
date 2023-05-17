@@ -56,6 +56,8 @@ app.post('/api/upload',upload.single('file'),(req,res)=>{
           console.log('err in File Uplaod server :>> ', err);
      }
 })
+app.options('*', cors()) // include before other routes
+
 
 const corsOptions ={
      origin:'https://mundiyaravni.netlify.app/', 
