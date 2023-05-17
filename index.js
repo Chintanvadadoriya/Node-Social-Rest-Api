@@ -60,7 +60,7 @@ app.options('*', cors()) // include before other routes
 
 
 const corsOptions ={
-     origin:'https://mundiyaravni.netlify.app/', 
+     origin:"*", 
      credentials:true,            //access-control-allow-credentials:true
      optionSuccessStatus:200
  }
